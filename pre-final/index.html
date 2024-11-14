@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-image: url(p.webp);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items at the top */
+    align-items: flex-start; /* Align items to the left */
+    height: 100vh;
+    background-position: center;
+    margin: 0; /* Remove default margin */
+}
+
+.login-container {
+    background: lightskyblue;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Optional: Add some space around the container */
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border: cover;
+    border-radius: 5px;
+}
+
+.login-container button {
+    background-color: #5cb85c; /* Default button color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.login-container button:hover {
+    background: linear-gradient(to right, #4cae4c, #5cb85c); /* Gradient on hover */
+}
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+        // Here you can add your authentication logic
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // For demonstration, we will just check if both fields are filled
+        if (username && password) {
+            // Redirect to the new webpage after successful login
+            window.location.href = 'Ph.html'; // Change this to your target page
+        } else {
+            alert('Please fill in both fields.');
+        }
+    });
+</script>
+
+</body>
+</html>
